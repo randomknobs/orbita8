@@ -23,7 +23,7 @@ function unlock() {
 		return;
 
 	// create empty buffer and play it
-	var buffer = myContext.createBuffer(1, 1, 22050);
+	var buffer = myContext.createBuffer(500, 500, 44100);
 	var source = myContext.createBufferSource();
 	source.buffer = buffer;
 	source.connect(myContext.destination);
