@@ -6,10 +6,33 @@
     <title>Unity WebGL Player | orbita</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
+	    
+	    
+	    
+	    
+	    window.addEventListener('touchstart', function() {
+	wait(15000); 
+
+	// create empty buffer
+	var buffer = myContext.createBuffer(1, 1, 22050);
+	var source = myContext.createBufferSource();
+	source.buffer = buffer;
+
+	// connect to output (your speakers)
+	source.connect(myContext.destination);
+
+	// play the file
+	source.noteOn(0);
+
+}, false);
+	    
+	    
+	    
 var isUnlocked = false;
 function unlock() {
-			
-	if(isIOS || this.unlocked)
+			 
+	if(isIOS)
+		wait(7000); 
 		return;
 
 	// create empty buffer and play it
